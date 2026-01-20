@@ -1,0 +1,98 @@
+/**
+ * Satoshi Theme Animations
+ *
+ * @package Satoshi_Theme
+ */
+
+/* GSAP will handle animations - These are fallbacks */
+/* Ensure smooth GSAP animations */
+.gsap-animating {
+    will-change: transform, opacity;
+}
+
+/* Header Shadow on Scroll */
+/* .header-scrolled {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+} */
+
+/* Button Hover Effects */
+.btn-hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-hover-lift:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Cursor Pointer Utilities */
+button,
+a,
+[role="button"],
+.clickable {
+    cursor: pointer;
+}
+
+input[type="search"],
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    cursor: text;
+}
+
+/* Smooth Transitions */
+.transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Category Item Active State */
+.category-item-active {
+    background-color: rgb(249 250 251);
+    position: relative;
+}
+
+.category-item-active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: rgb(17 24 39);
+}
+
+/* Cart Count Badge - GSAP handles animation */
+.cart-badge-enter {
+    display: flex;
+}
+
+/* Subcategory Column - GSAP handles expand */
+.subcategory-expand {
+    overflow: hidden;
+}
+
+/* Focus Styles */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible {
+    outline: 2px solid rgb(59 130 246);
+    outline-offset: 2px;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
